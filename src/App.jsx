@@ -4,18 +4,11 @@ import SearchBar from "./components/SearchBar";
 import NoteForm from "./components/NoteForm";
 import ActiveNotesList from "./components/ActiveNotesList";
 import ArchivedNotesList from "./components/ArchivedNotesList";
+import { getInitialData, showFormattedDate } from "./utils/initialData";
 
 const App = () => {
   // Initial Data
-  const initialNotes = [
-    {
-      id: 1,
-      title: "Babel",
-      body: "Babel merupakan tools open-source yang digunakan untuk mengubah sintaks ECMAScript 2015+ menjadi sintaks yang didukung oleh JavaScript engine versi lama. Babel sering dipakai ketika kita menggunakan sintaks terbaru termasuk sintaks JSX.",
-      archived: false,
-      createdAt: "2022-04-14T04:27:34.572Z",
-    },
-  ];
+  const initialNotes = getInitialData();
 
   const [notes, setNotes] = useState(initialNotes);
   const [archivedNotes, setArchivedNotes] = useState([]);
@@ -120,11 +113,13 @@ const App = () => {
             notes={filteredNotes}
             onArchive={archiveNote}
             onDelete={deleteNote}
+            showFormattedDate={showFormattedDate}
           />
           <ArchivedNotesList
             notes={filteredArchivedNotes}
             onUnarchive={unarchiveNote}
             onDelete={deleteNote}
+            showFormattedDate={showFormattedDate}
           />
         </div>
       </div>

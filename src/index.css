@@ -24,4 +24,13 @@ code {
   padding: 0 10px;
 }
 
-/* Tambahkan gaya khusus Anda di bawah ini */
+.custom-archive-btn {
+  background-color: #17a2b8;
+}
+.custom-unarchive-btn {
+  background-color: #ffc107;
+}
+
+.custom-delete-btn {
+  background-color: #dc3545;
+}
